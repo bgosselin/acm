@@ -1,0 +1,11 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  clusterName: my-cluster
+  git:
+    syncRepo: https://source.developers.google.com/p/exemplary-labs/r/acm-exemplary-labs
+    secretType: none
+    policyDir: "prod-policy"
